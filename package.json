@@ -29,6 +29,13 @@
   "build": {
     "appId": "id.bawapi.selotip",
     "productName": "Selotip",
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "rafieakila-cloud",
+        "repo": "Selotip"
+      }
+    ],
     "directories": {
       "output": "release"
     },

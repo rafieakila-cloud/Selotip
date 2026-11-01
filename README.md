@@ -13,7 +13,7 @@ Selotip is a lightweight desktop code editor with syntax highlighting, file open
 
 ## Download for Windows
 
-Download the latest `Selotip-*-Windows-x64.exe` installer from the repository's [Releases](../../releases) page.
+Download the latest `Selotip-*-Windows-x64.exe` installer from the repository's [Releases](https://github.com/rafieakila-cloud/Selotip/releases) page.
 
 ## Build on Windows
 

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#111614">
+    <meta name="description" content="Selotip, editor kode multi-bahasa dengan preview web dan runner lokal.">
+    <title>Selotip</title>
+  </head>
+  <body>
+    <main class="workbench">
+      <header class="titlebar">
+        <div class="brand"><span class="brand-mark">S</span><strong>selotip</strong><span class="brand-divider"></span><span class="brand-tagline">Code, then preview.</span></div>
+        <div class="titlebar-actions"><span class="credit-label">Rafie Akila Cloud · Bawapi</span><span id="saveState" class="save-state">Belum disimpan</span></div>
+      </header>
+
+      <section class="toolbar" aria-label="Editor controls">
+        <div class="file-actions">
+          <button id="newButton" class="tool-button" type="button" title="File baru">Baru</button>
+          <button id="openButton" class="tool-button" type="button" title="Buka file">Buka</button>
+          <button id="saveButton" class="tool-button" type="button" title="Simpan file">Simpan</button>
+        </div>
+        <div class="toolbar-spacer"></div>
+        <label class="language-picker"><span>BAHASA</span><select id="languageSelect" aria-label="Bahasa pemrograman"></select></label>
+        <button id="previewButton" class="preview-button" type="button"><span class="play-icon">▶</span> Preview <kbd>Ctrl ↵</kbd></button>
+      </section>
+
+      <section class="editor-tabs" aria-label="File editor">
+        <div class="file-tab"><span id="fileDot" class="file-dot"></span><span id="fileName">index.html</span><span class="tab-unsaved" id="unsavedMark" hidden>●</span></div>
+        <div class="editor-tab-actions"><span id="languageHint">HTML · live preview</span></div>
+      </section>
+
+      <section class="workspace">
+        <div class="editor-pane">
+          <div class="editor-header"><span>EDITOR</span><span id="cursorPosition">BARIS 1, KOLOM 1</span></div>
+          <div id="editor" class="editor"></div>
+        </div>
+        <div class="preview-pane">
+          <div class="preview-header">
+            <div class="preview-heading"><span class="preview-indicator"></span><span id="previewTitle">PRATINJAU</span></div>
+            <div class="preview-actions"><span id="runtimeLabel">SANDBOX</span><button id="clearOutput" type="button" aria-label="Bersihkan output" title="Bersihkan output">Bersihkan</button></div>
+          </div>
+          <iframe id="previewFrame" title="Pratinjau kode" sandbox="allow-scripts" referrerpolicy="no-referrer"></iframe>
+          <pre id="runtimeOutput" class="runtime-output" aria-live="polite" hidden></pre>
+          <div id="emptyPreview" class="empty-preview"><span class="empty-symbol">⌘</span><strong>Siap untuk Preview</strong><span>Tulis kode, lalu tekan tombol Preview.</span></div>
+        </div>
+      </section>
+
+      <footer class="statusbar"><span id="statusMessage">SELotip · preview lokal</span><span id="statusLanguage">HTML</span><span>UTF-8</span><span>Windows</span></footer>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

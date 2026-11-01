@@ -1,0 +1,47 @@
+{
+  "name": "selotip-code-editor",
+  "version": "1.0.0",
+  "description": "Lightweight multilingual code editor with a live web preview and local runtime support.",
+  "author": "Rafie Akila Cloud and Bawapi",
+  "license": "GPL-3.0-only",
+  "private": true,
+  "type": "module",
+  "main": "desktop/main.cjs",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "vite build",
+    "desktop": "npm run build && electron .",
+    "desktop:dist": "npm run build && electron-builder --win nsis --publish never"
+  },
+  "dependencies": {
+    "@codemirror/language-data": "^6.5.2",
+    "codemirror": "^6.0.1"
+  },
+  "devDependencies": {
+    "electron": "45.2.1",
+    "electron-builder": "^26.18.0",
+    "vite": "6.3.5"
+  },
+  "build": {
+    "appId": "id.bawapi.selotip",
+    "productName": "Selotip",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "desktop/**/*",
+      "dist/**/*",
+      "package.json"
+    ],
+    "artifactName": "${productName}-${version}-Windows-${arch}.${ext}",
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}

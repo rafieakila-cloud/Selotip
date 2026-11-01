@@ -4,6 +4,10 @@
   "description": "Lightweight multilingual code editor with a live web preview and local runtime support.",
   "author": "Rafie Akila Cloud and Bawapi",
   "license": "GPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rafieakila-cloud/Selotip.git"
+  },
   "private": true,
   "type": "module",
   "main": "desktop/main.cjs",
